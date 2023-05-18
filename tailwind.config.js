@@ -14,6 +14,8 @@ export default {
       },
       boxShadow: {
         'custom': '0px 16px 48px rgba(39, 39, 39, 0.1)',
+        'lightBlue': '0px 16px 40px #81d1e580',
+        'lightPink': '0px 14px 35px #ff80868f',
       },
       container: {
         center: true,
