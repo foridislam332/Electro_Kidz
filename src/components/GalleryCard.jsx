@@ -9,7 +9,7 @@ const GalleryCard = ({ toy }) => {
             </div>
             <div className='border border-blue rounded-lg p-3 flex-1'>
                 <h3 className="text-lg mb-2 text-blue font-bold">{title}</h3>
-                <p>{description}</p>
+                <p className='hidden lg:inline-block'>{description}</p>
             </div>
         </div>
     );

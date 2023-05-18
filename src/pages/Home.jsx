@@ -8,9 +8,6 @@ const Home = () => {
             <HeroBanner />
             <Gallery />
             <Category />
-            <h1 className="text-3xl font-bold underline font-body">
-                Hello world!
-            </h1>
         </>
     );
 };

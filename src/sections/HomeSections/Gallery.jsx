@@ -50,7 +50,7 @@ const Gallery = () => {
                 </div>
 
                 {/* gallery card */}
-                <div className='grid grid-cols-1 md:grid-cols-3 gap-8 mt-12'>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mt-12'>
                     {
                         toyCards.map(toy => <GalleryCard key={toy.id} toy={toy} />)
                     }
