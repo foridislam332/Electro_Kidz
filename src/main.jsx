@@ -6,9 +6,12 @@ import routes from './routes/routes'
 
 // quicksand fonts
 import 'typeface-quicksand';
+import AuthProvider from './providers/AuthProvider'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={routes} />
+    <AuthProvider>
+      <RouterProvider router={routes} />
+    </AuthProvider>
   </React.StrictMode>,
 )
