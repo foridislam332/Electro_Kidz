@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
 import ActiveLink from "../../ActiveLink";
@@ -7,8 +7,11 @@ import MobileNav from "./MobileNav";
 // react icons
 import { AiOutlineShoppingCart, AiOutlineHeart } from 'react-icons/ai';
 import { HiBars3BottomRight } from 'react-icons/hi2';
+import { AuthContext } from "../../../providers/AuthProvider";
+import UserProfile from "./UserProfile";
 
 const HiddenNav = () => {
+    const { user } = useContext(AuthContext);
     const [show, setShow] = useState(false);
 
     const [scrollNav, setScrollNav] = useState(false);
@@ -55,11 +58,13 @@ const HiddenNav = () => {
                         <li>
                             <AiOutlineShoppingCart size={24} />
                         </li>
-                        <li>
-                            <ActiveLink to='/login'>
-                                <button className="btn_primary">Login</button>
-                            </ActiveLink>
-                        </li>
+                        {
+                            user ? <UserProfile user={user} /> : <li>
+                                <Link to='/login'>
+                                    <button className="btn_primary">Login</button>
+                                </Link>
+                            </li>
+                        }
                     </ul>
 
                     {/* responsive nav */}

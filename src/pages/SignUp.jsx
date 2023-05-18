@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 
 const SignUp = () => {
-    const { createUser, googleSignIn } = useContext(AuthContext);
+    const { createUser, profileUpdate, googleSignIn } = useContext(AuthContext);
 
     // create account
     const handleSubmit = e => {
@@ -19,8 +19,14 @@ const SignUp = () => {
         const photo = form.photo.value;
 
         createUser(email, password)
-            .then(result => {
-                console.log(result.user)
+            .then((result) => {
+                profileUpdate(result.user, name, photo)
+                    .then(() => {
+
+                    }).catch((error) => {
+                        // An error occurred
+                        // ...
+                    });
             })
             .catch(error => {
                 console.log(error.message)
@@ -92,7 +98,7 @@ const SignUp = () => {
                                     <input
                                         id='photo'
                                         className='w-full border border-blue focus:border-pink outline-none pl-4 py-3 mt-1 rounded-lg'
-                                        type="password"
+                                        type="text"
                                         name='photo'
                                         placeholder='Enter your photo URL'
                                     />

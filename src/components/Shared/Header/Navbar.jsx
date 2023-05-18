@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import ActiveLink from "../../ActiveLink";
 import MobileNav from "./MobileNav";
@@ -6,9 +6,12 @@ import MobileNav from "./MobileNav";
 // react icons
 import { AiOutlineShoppingCart, AiOutlineHeart } from 'react-icons/ai';
 import { HiBars3BottomRight } from 'react-icons/hi2';
+import UserProfile from "./UserProfile";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const Navbar = () => {
     const [show, setShow] = useState(false);
+    const { user } = useContext(AuthContext);
     return (
         <nav className='shadow-lg w-full z-50 transition-all duration-300 ease-in-out bg-white'>
             <div className="container">
@@ -41,11 +44,14 @@ const Navbar = () => {
                         <li>
                             <AiOutlineShoppingCart size={24} />
                         </li>
-                        <li>
-                            <ActiveLink to='/login'>
-                                <button className="btn_primary">Login</button>
-                            </ActiveLink>
-                        </li>
+
+                        {
+                            user ? <UserProfile user={user} /> : <li>
+                                <Link to='/login'>
+                                    <button className="btn_primary">Login</button>
+                                </Link>
+                            </li>
+                        }
                     </ul>
 
                     {/* responsive nav */}
