@@ -20,7 +20,7 @@ const Footer = () => {
                                 {/* <img src={Logo} alt="Electro-Kidz" /> */}
                                 Electro-Kidz
                             </Link>
-                            <p className='text-[#7B7B7B] text-[15px] mt-8 mb-12'>With more than 20 years of experience we can deliver the best product design</p>
+                            <p className='text-[#7B7B7B] text-[15px] mt-8 mb-12'>ElectroKidz is a vibrant and innovative brand that brings a world of electronic toys to life.</p>
 
                             <div className='flex items-center gap-4 text-[#FAFAFA]'>
                                 <FaFacebookF />
@@ -58,13 +58,13 @@ const Footer = () => {
 
                             <ul className='flex flex-col gap-4'>
                                 <li>
-                                    <Link className='text-[#7B7B7B] hover:text-[#FAFAFA] duration-300' to='/guide'>Style Guide</Link>
+                                    <Link className='text-[#7B7B7B] hover:text-[#FAFAFA] duration-300' to='/'>Secure Payment</Link>
                                 </li>
                                 <li>
-                                    <Link className='text-[#7B7B7B] hover:text-[#FAFAFA] duration-300' to='/licensing'>Licensing</Link>
+                                    <Link className='text-[#7B7B7B] hover:text-[#FAFAFA] duration-300' to='/delivery'>Delivery</Link>
                                 </li>
                                 <li>
-                                    <Link className='text-[#7B7B7B] hover:text-[#FAFAFA] duration-300' to='/changelog'>Changelog</Link>
+                                    <Link className='text-[#7B7B7B] hover:text-[#FAFAFA] duration-300' to='/terms'>Terms And Conditions</Link>
                                 </li>
                             </ul>
                         </div>
