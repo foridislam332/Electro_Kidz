@@ -8,7 +8,7 @@ import { AuthContext } from '../providers/AuthProvider';
 
 const Login = () => {
     const { user, signIn, googleSignIn } = useContext(AuthContext);
-    console.log(user)
+
     const handleSubmit = e => {
         e.preventDefault();
         const form = e.target;
