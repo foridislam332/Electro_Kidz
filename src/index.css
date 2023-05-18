@@ -1,6 +1,3 @@
-/* google fonts */
-@import url('https://fonts.googleapis.com/css2? family=Quicksand:wght@400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,3 +7,54 @@
   margin: 0;
   font-family: 'Quicksand', sans-serif;
 }
+
+/* primary button design START */
+.btn_primary {
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  background: #81d1e5;
+  padding: 10px 24px;
+  border-radius: 30px;
+  transition: all .3s ease-in-out;
+  box-shadow: 0px 14px 35px #81d1e580;
+  position: relative;
+  overflow: hidden;
+  z-index: 20;
+}
+
+.btn_primary:hover {
+  box-shadow: 0px 14px 35px 0 #ff80868f;
+}
+
+.btn_primary::before,
+.btn_primary::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #ff8087;
+  border-radius: 30px;
+  top: 0;
+  transition: all .3s ease-in-out;
+  z-index: -1;
+}
+
+.btn_primary::before {
+  left: 0;
+  transform: rotate(-90deg);
+  transform-origin: top left;
+}
+
+.btn_primary::after {
+  right: 0;
+  transform: rotate(-90deg);
+  transform-origin: top right;
+}
+
+.btn_primary:hover:before,
+.btn_primary:hover:after {
+  transform: rotate(0deg);
+}
+
+/* primary button design END */

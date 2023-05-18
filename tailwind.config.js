@@ -12,6 +12,9 @@ export default {
         'navy': '#183a5c',
         'gray-text': '#777777',
       },
+      boxShadow: {
+        'custom': '0px 16px 48px rgba(39, 39, 39, 0.1)',
+      },
       container: {
         center: true,
         padding: {
