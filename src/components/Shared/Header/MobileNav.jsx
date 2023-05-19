@@ -1,9 +1,12 @@
 
 // react-icons
+import { useContext } from "react";
 import { TfiClose } from "react-icons/tfi";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const MobileNav = ({ show, toggle }) => {
+    const { user } = useContext(AuthContext);
     return (
         <>
             <div style={show ? { clipPath: 'circle(200% at 100% 0)' } : { clipPath: 'circle(0% at 100% 0)' }} className={`lg:hidden fixed bg-navy origin-top-right text-white w-[250px] h-screen top-0 right-0 z-50 px-6 transition-all duration-300 ease-in`}>
@@ -21,6 +24,16 @@ const MobileNav = ({ show, toggle }) => {
                             All Toys
                         </Link>
                     </li>
+                    {
+                        user && <>
+                            <li>
+                                <Link to='/my-toys'>My Toys</Link>
+                            </li>
+                            <li>
+                                <Link to='/add-toys'>Add Toys</Link>
+                            </li>
+                        </>
+                    }
                     <li>
                         <Link to='/blog' onClick={toggle}>
                             Blog

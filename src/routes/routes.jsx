@@ -7,6 +7,8 @@ import EditProfile from "../pages/EditProfile";
 import ToyDetails from "../pages/ToyDetails";
 import AllToys from "../pages/AllToys";
 import PrivateRoute from "./PrivateRoute";
+import MyToys from "../pages/MyToys";
+import AddToys from "../pages/AddToys";
 
 const routes = createBrowserRouter([
     {
@@ -22,9 +24,17 @@ const routes = createBrowserRouter([
                 element: <AllToys />
             },
             {
+                path: '/my-toys',
+                element: <PrivateRoute><MyToys /></PrivateRoute>
+            },
+            {
+                path: '/add-toys',
+                element: <PrivateRoute><AddToys /></PrivateRoute>
+            },
+            {
                 path: '/toyDetails/:id',
                 element: <PrivateRoute><ToyDetails /></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/all-toys/${params.id}`)
+                loader: ({ params }) => fetch(`https://electro-kidz-server.vercel.app/all-toys/${params.id}`)
             },
             {
                 path: '/login',

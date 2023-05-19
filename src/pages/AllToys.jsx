@@ -6,7 +6,7 @@ const AllToys = () => {
     const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(() => {
-        fetch(`http://localhost:5000/all-toys?search=${searchTerm}`)
+        fetch(`https://electro-kidz-server.vercel.app/all-toys?search=${searchTerm}`)
             .then(res => res.json())
             .then(data => setToys(data))
     }, [searchTerm])
