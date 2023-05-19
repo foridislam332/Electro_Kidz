@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
+import { toast } from 'react-toastify';
 
 const AddToys = () => {
     const { user } = useContext(AuthContext);
@@ -13,23 +14,63 @@ const AddToys = () => {
         const email = form.email.value;
         const subCategory = form.category.value;
         const img = form.photo.value;
-        const price = parseFloat(form.price.value);
+        const price = form.price.value;
         const rating = form.rating.value;
         const seller = form.seller.value;
         const quantity = form.quantity.value;
         const des = form.description.value;
 
         if (isNaN(price)) {
-            return alert('price should be number')
+            return toast.warning('Price should be number', {
+                position: "top-center",
+                autoClose: 3000,
+                theme: "light",
+            });
         }
         if (isNaN(rating)) {
-            return alert('rating should be number')
-        }
-        if (isNaN(quantity)) {
-            return alert('quantity should be number')
+            return toast.warning('Rating should be number', {
+                position: "top-center",
+                autoClose: 3000,
+                theme: "light",
+            });
         }
 
-        console.log(name, img, price, rating, subCategory, quantity, des, seller, email)
+        if (!parseFloat(rating) <= 5) {
+            return toast.warning('Rating is less than or equal to 5', {
+                position: "top-center",
+                autoClose: 3000,
+                theme: "light",
+            });
+        }
+
+        if (isNaN(quantity)) {
+            return toast.warning('Quantity should be number', {
+                position: "top-center",
+                autoClose: 3000,
+                theme: "light",
+            });
+        }
+
+        const newToy = { name, img, price, rating, subCategory, quantity, des, seller, email }
+
+        fetch('http://localhost:5000/all-toys', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newToy)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    toast.success('👌 Toy add Done!', {
+                        position: "top-center",
+                        autoClose: 3000,
+                        theme: "light",
+                    });
+                }
+                form.reset();
+            })
     }
 
     return (
