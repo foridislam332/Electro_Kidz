@@ -3,12 +3,17 @@ import React, { useContext } from 'react';
 // image
 import LoginImg from '../assets/images/login.jpg';
 import GoogleImg from '../assets/images/google.png';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 import { toast } from 'react-toastify';
 
 const Login = () => {
     const { signIn, googleSignIn } = useContext(AuthContext);
+
+    // navigate
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
     // email sign in
     const handleSubmit = e => {
@@ -27,7 +32,7 @@ const Login = () => {
 
         signIn(email, password)
             .then(() => {
-
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 toast.error(error.message, {
@@ -42,7 +47,7 @@ const Login = () => {
     const handleGoogleSignIn = () => {
         googleSignIn()
             .then(() => {
-
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 toast.error(error.message, {

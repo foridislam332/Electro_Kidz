@@ -3,12 +3,17 @@ import React, { useContext } from 'react';
 // image
 import SignUpImg from '../assets/images/sign-up.jpg';
 import GoogleImg from '../assets/images/google.png';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 import { toast } from 'react-toastify';
 
 const SignUp = () => {
     const { createUser, profileUpdate, googleSignIn } = useContext(AuthContext);
+
+    // navigate
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
     // create account
     const handleSubmit = e => {
@@ -31,7 +36,7 @@ const SignUp = () => {
             .then((result) => {
                 profileUpdate(result.user, name, photo)
                     .then(() => {
-
+                        navigate(from, { replace: true })
                     }).catch((error) => {
                         toast.error(error.message, {
                             position: "top-center",
@@ -53,7 +58,7 @@ const SignUp = () => {
     const handleGoogleSignIn = () => {
         googleSignIn()
             .then(() => {
-
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 toast.error(error.message, {
@@ -63,6 +68,7 @@ const SignUp = () => {
                 });
             })
     }
+
     return (
         <section className='py-16 lg:py-[120px]'>
             <div className='container'>
