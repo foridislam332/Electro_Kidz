@@ -38,9 +38,9 @@ const ToyDetails = () => {
     return (
         <section className='py-16'>
             <div className="container">
-                <div className='grid grid-cols-2 items-center'>
+                <div className='grid grid-cols-1 lg:grid-cols-2 items-center'>
                     <div>
-                        <img src={img} alt={name} />
+                        <img className='w-96 lg:w-[500px] mx-auto' src={img} alt={name} />
                     </div>
 
                     <div className='md:pl-8'>
