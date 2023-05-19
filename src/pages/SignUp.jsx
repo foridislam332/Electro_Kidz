@@ -5,6 +5,7 @@ import SignUpImg from '../assets/images/sign-up.jpg';
 import GoogleImg from '../assets/images/google.png';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
+import { toast } from 'react-toastify';
 
 const SignUp = () => {
     const { createUser, profileUpdate, googleSignIn } = useContext(AuthContext);
@@ -18,29 +19,48 @@ const SignUp = () => {
         const password = form.password.value;
         const photo = form.photo.value;
 
+        if (password.length < 6) {
+            return toast.error('Password should be at least 6 characters', {
+                position: "top-center",
+                autoClose: 3000,
+                theme: "light",
+            });
+        }
+
         createUser(email, password)
             .then((result) => {
                 profileUpdate(result.user, name, photo)
                     .then(() => {
 
                     }).catch((error) => {
-                        // An error occurred
-                        // ...
+                        toast.error(error.message, {
+                            position: "top-center",
+                            autoClose: 3000,
+                            theme: "light",
+                        });
                     });
             })
             .catch(error => {
-                console.log(error.message)
+                toast.error(error.message, {
+                    position: "top-center",
+                    autoClose: 3000,
+                    theme: "light",
+                });
             })
     }
 
     // google sign up
     const handleGoogleSignIn = () => {
         googleSignIn()
-            .then(result => {
-                console.log(result.user)
+            .then(() => {
+
             })
             .catch(error => {
-                console.log(error.message)
+                toast.error(error.message, {
+                    position: "top-center",
+                    autoClose: 3000,
+                    theme: "light",
+                });
             })
     }
     return (

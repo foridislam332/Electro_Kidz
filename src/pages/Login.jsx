@@ -5,33 +5,51 @@ import LoginImg from '../assets/images/login.jpg';
 import GoogleImg from '../assets/images/google.png';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
+import { toast } from 'react-toastify';
 
 const Login = () => {
-    const { user, signIn, googleSignIn } = useContext(AuthContext);
+    const { signIn, googleSignIn } = useContext(AuthContext);
 
+    // email sign in
     const handleSubmit = e => {
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
 
+        if (password.length < 6) {
+            return toast.error('Password should be at least 6 characters', {
+                position: "top-center",
+                autoClose: 3000,
+                theme: "light",
+            });
+        }
+
         signIn(email, password)
-            .then(result => {
-                console.log(result.user)
+            .then(() => {
+
             })
             .catch(error => {
-                console.log(error.message)
+                toast.error(error.message, {
+                    position: "top-center",
+                    autoClose: 3000,
+                    theme: "light",
+                });
             })
     }
 
     // google sign in
     const handleGoogleSignIn = () => {
         googleSignIn()
-            .then(result => {
-                console.log(result.user)
+            .then(() => {
+
             })
             .catch(error => {
-                console.log(error.message)
+                toast.error(error.message, {
+                    position: "top-center",
+                    autoClose: 3000,
+                    theme: "light",
+                });
             })
     }
     return (

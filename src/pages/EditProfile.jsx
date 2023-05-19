@@ -1,5 +1,6 @@
 import React, { useContext, useRef } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
+import { toast } from 'react-toastify';
 
 const EditProfile = () => {
     const nameRef = useRef(null);
@@ -12,8 +13,12 @@ const EditProfile = () => {
         const photo = form.photo.value;
 
         profileUpdate(user, name, photo)
-            .then(result => {
-                alert('update success')
+            .then(() => {
+                toast.success('👌 Profile Update Success!', {
+                    position: "top-center",
+                    autoClose: 3000,
+                    theme: "light",
+                });
             })
             .then(error => {
                 console.log(error.message)

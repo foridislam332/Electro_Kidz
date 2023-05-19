@@ -12,11 +12,13 @@ const AuthProvider = ({ children }) => {
 
     const auth = getAuth(app);
 
+    // create user
     const createUser = (email, password) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
     }
 
+    // email sign in
     const signIn = (email, password) => {
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
@@ -30,12 +32,14 @@ const AuthProvider = ({ children }) => {
         })
     }
 
+    // google sign in
     const googleSignIn = () => {
         setLoading(true);
         const googleProvider = new GoogleAuthProvider();
         return signInWithPopup(auth, googleProvider)
     }
 
+    // sign out
     const logOut = () => {
         return signOut(auth);
     }
