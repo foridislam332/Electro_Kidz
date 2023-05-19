@@ -1,17 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // Rating star
 import { Rating, Star } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
-import { Link } from 'react-router-dom';
 
 const CategoryCard = ({ product }) => {
-    const { name, img, price, rating, subCategory } = product;
+    const { _id, name, img, price, rating } = product;
 
     const myStyles = {
         itemShapes: Star,
-        activeFillColor: '#ffb700',
-        inactiveFillColor: '#fbf1a9'
+        activeFillColor: '#ff8087',
+        inactiveFillColor: '#ff80864c'
     }
     return (
         <div className="max-w-sm rounded-lg border border-pink p-6 overflow-hidden shadow-lg hover:border-blue hover:shadow-lightBlue transition-all duration-300 ease-in-out group">
@@ -27,7 +27,7 @@ const CategoryCard = ({ product }) => {
                 </div>
                 <div className="flex items-center justify-between mt-6">
                     <p className="mr-2 text-navy text-2xl font-bold drop-shadow-lg">${price}</p>
-                    <Link to={`/details/`} className="btn_primary">View Details</Link>
+                    <Link to={`/toyDetails/${_id}`} className="btn_primary">View Details</Link>
                 </div>
             </div>
         </div>

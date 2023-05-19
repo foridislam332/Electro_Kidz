@@ -1,18 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
 import CategoryCard from '../../components/CategoryCard';
 
+// react tabs
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
+
 const Category = () => {
-    const [products, setProducts] = useState([]);
+    const [toys, setToys] = useState([]);
     const [category, setCategory] = useState('Handheld Games');
+
     useEffect(() => {
-        fetch('/category.json')
+        fetch('http://localhost:5000/all-toys')
             .then(res => res.json())
             .then(data => {
                 if (data.length) {
-                    const filter = data.filter(product => product.subCategory == category);
-                    setProducts(filter)
+                    const filter = data.filter(product => product.subCategory === category);
+                    setToys(filter)
                 }
             })
     }, [category])
@@ -36,8 +39,8 @@ const Category = () => {
                     <TabPanel>
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12'>
                             {
-                                products.map(product => <CategoryCard
-                                    key={product.name}
+                                toys.map(product => <CategoryCard
+                                    key={product._id}
                                     product={product}
                                 />)
                             }
@@ -46,7 +49,7 @@ const Category = () => {
                     <TabPanel>
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 jus'>
                             {
-                                products.map(product => <CategoryCard
+                                toys.map(product => <CategoryCard
                                     key={product.name}
                                     product={product}
                                 />)
@@ -56,7 +59,7 @@ const Category = () => {
                     <TabPanel>
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12'>
                             {
-                                products.map(product => <CategoryCard
+                                toys.map(product => <CategoryCard
                                     key={product.name}
                                     product={product}
                                 />)
