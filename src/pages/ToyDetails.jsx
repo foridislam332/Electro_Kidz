@@ -11,7 +11,7 @@ import { FaFacebookF, FaTwitter, FaPinterest, FaGoogle } from "react-icons/fa";
 const ToyDetails = () => {
     const [count, setCount] = useState(1);
     const toy = useLoaderData();
-    const { name, img, price, rating, quantity, seller, subCategory } = toy;
+    const { name, img, price, rating, quantity, seller, subCategory, des } = toy;
 
     const myStyles = {
         itemShapes: Star,
@@ -70,9 +70,13 @@ const ToyDetails = () => {
                         </div>
 
                         {/* description */}
-                        <p className='text-gray-text'>
-                            Lorem ipsum dolor sit amet, consect adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quisll exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duisol aute irure dolor in reprehenderit.
-                        </p>
+                        {
+                            des ? <p className='text-gray-text'>
+                                {des}
+                            </p> : <p className='text-gray-text'>
+                                Lorem ipsum dolor sit amet, consect adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quisll exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duisol aute irure dolor in reprehenderit.
+                            </p>
+                        }
 
                         {/* button */}
                         <div className='flex items-center gap-10 my-8'>

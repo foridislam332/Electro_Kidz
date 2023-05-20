@@ -54,7 +54,7 @@ const AllToys = () => {
                     </button>
                 </div>
 
-                {/* toy card */}
+                {/* toy table */}
                 <div className='overflow-x-auto'>
                     <table className="table w-full border border-blue">
                         <thead>
