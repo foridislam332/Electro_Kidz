@@ -4,6 +4,7 @@ import CategoryCard from '../../components/CategoryCard';
 // react tabs
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import Loader from '../../components/Loader';
 
 const Category = () => {
     const [toys, setToys] = useState([]);
@@ -19,6 +20,19 @@ const Category = () => {
                 }
             })
     }, [category])
+
+    let content;
+
+    if (toys.length === 0) {
+        content = <Loader />
+        return
+    }
+    if (toys.length) {
+        content = toys.map(product => <CategoryCard
+            key={product._id}
+            product={product}
+        />)
+    }
 
     return (
         <section className='pb-16 md:pb-[120px]'>
@@ -38,32 +52,17 @@ const Category = () => {
 
                     <TabPanel>
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12'>
-                            {
-                                toys.map(product => <CategoryCard
-                                    key={product._id}
-                                    product={product}
-                                />)
-                            }
+                            {content}
                         </div>
                     </TabPanel>
                     <TabPanel>
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 jus'>
-                            {
-                                toys.map(product => <CategoryCard
-                                    key={product.name}
-                                    product={product}
-                                />)
-                            }
+                            {content}
                         </div>
                     </TabPanel>
                     <TabPanel>
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12'>
-                            {
-                                toys.map(product => <CategoryCard
-                                    key={product.name}
-                                    product={product}
-                                />)
-                            }
+                            {content}
                         </div>
                     </TabPanel>
                 </Tabs>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ToyCard from '../components/ToyCard';
+import Loader from '../components/Loader';
 
 const AllToys = () => {
     const [toys, setToys] = useState([]);
@@ -10,6 +11,16 @@ const AllToys = () => {
             .then(res => res.json())
             .then(data => setToys(data))
     }, [searchTerm])
+
+    let content;
+
+    if (toys.length === 0) {
+        content = <Loader />
+        return
+    }
+    if (toys.length) {
+        content = toys.map(toy => <ToyCard key={toy._id} toy={toy} />)
+    }
 
     return (
         <section className='py-16'>
@@ -39,9 +50,7 @@ const AllToys = () => {
 
                 {/* toy card */}
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
-                    {
-                        toys.map(toy => <ToyCard key={toy._id} toy={toy} />)
-                    }
+                    {content}
                 </div>
             </div>
         </section>
