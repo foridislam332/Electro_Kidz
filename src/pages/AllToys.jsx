@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ToyCard from '../components/ToyCard';
 import Loader from '../components/Loader';
+import AllToyTableRow from '../components/AllToyTableRow';
 
 const AllToys = () => {
     const [toys, setToys] = useState([]);
@@ -18,12 +19,14 @@ const AllToys = () => {
         content = <Loader />
     }
     else if (toys.length > 0) {
-        content = <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
-            {
-                toys.map(toy => <ToyCard key={toy._id} toy={toy} />)
-            }
-        </div>
+        content = toys.map(toy => <AllToyTableRow key={toy._id} toy={toy} />)
     }
+
+    {/* <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
+    {
+        toys.map(toy => <All key={toy._id} toy={toy} />)
+    }
+</div> */}
 
     return (
         <section className='py-16'>
@@ -52,7 +55,22 @@ const AllToys = () => {
                 </div>
 
                 {/* toy card */}
-                {content}
+                <div className='overflow-x-auto'>
+                    <table className="table w-full border border-blue">
+                        <thead>
+                            <tr className="bg-blue text-white uppercase leading-normal">
+                                <th className="py-3 px-4 text-left">Name</th>
+                                <th className="py-3 px-2 text-left">Sub-category</th>
+                                <th className="py-3 px-2 text-center">Price</th>
+                                <th className="py-3 px-2 text-center">Quantity</th>
+                                <th className="py-3 px-4 text-center">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody className="text-gray-600 font-medium">
+                            {content}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </section>
     );
