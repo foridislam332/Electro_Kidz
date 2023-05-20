@@ -6,39 +6,43 @@ const Gallery = () => {
         {
             id: 1,
             image: "https://i.ibb.co/ynjpBBB/toy-8.png",
-            title: "Electronic Car Toy",
-            description: "Speed, control, and thrilling racing action in one toy!",
+            title: "Electronic Car Toy"
         },
         {
             id: 2,
             image: "https://i.ibb.co/WGwBHCY/robot-2.png",
-            title: "Interactive Robot Toy",
-            description: "Interactive robot toy for limitless imagination and play!",
+            title: "Interactive Robot Toy"
         },
         {
             id: 3,
             image: "https://i.ibb.co/728RY5g/toys-3.png",
-            title: "Electronic Gun Toy",
-            description: "Action-packed laser gun toy for thrilling battles and immersive play!",
+            title: "Electronic Gun Toy"
         },
         {
             id: 4,
             image: "https://i.ibb.co/n0h94MF/toys-5.png",
-            title: "Game Master Interactive",
-            description: "Immersive gaming experience with interactive endless fun!",
+            title: "Game Master Interactive"
         },
         {
             id: 5,
             image: "https://i.ibb.co/rxYp3tN/toy-1.png",
-            title: "Sky Master Helicopter",
-            description: "High-flying action and remote control excitement for adventures!",
+            title: "Sky Master Helicopter"
         },
         {
             id: 6,
             image: "https://i.ibb.co/pjkV2GL/toys-6.png",
-            title: "Aero Speed Airplane",
-            description: "Take off on thrilling adventures with this electronic airplane toy!",
+            title: "Aero Speed Airplane"
         },
+        {
+            id: 7,
+            image: "https://i.ibb.co/SPYrLNj/7.png",
+            title: "Electro Speed Train"
+        },
+        {
+            id: 8,
+            image: "https://i.ibb.co/6gzhpbD/8.png",
+            title: "Electronic Car Toy"
+        }
     ];
     return (
         <section className='py-16 md:py-[120px]'>
@@ -50,7 +54,7 @@ const Gallery = () => {
                 </div>
 
                 {/* gallery card */}
-                <div className='grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mt-12'>
+                <div className='grid grid-cols-1 md:grid-cols-4 mt-12'>
                     {
                         toyCards.map(toy => <GalleryCard key={toy.id} toy={toy} />)
                     }

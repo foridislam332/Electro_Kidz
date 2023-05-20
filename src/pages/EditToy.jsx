@@ -4,7 +4,6 @@ import { toast } from 'react-toastify';
 
 const EditToy = () => {
     const toyData = useLoaderData();
-    console.log(toyData)
 
     const { _id, name, img, price, rating, quantity, subCategory, des, seller, email } = toyData;
     // add toy
