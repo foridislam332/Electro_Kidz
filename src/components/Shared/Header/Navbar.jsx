@@ -2,12 +2,15 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import ActiveLink from "../../ActiveLink";
 import MobileNav from "./MobileNav";
+import UserProfile from "./UserProfile";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 // react icons
 import { AiOutlineShoppingCart, AiOutlineHeart } from 'react-icons/ai';
 import { HiBars3BottomRight } from 'react-icons/hi2';
-import UserProfile from "./UserProfile";
-import { AuthContext } from "../../../providers/AuthProvider";
+
+// logo
+import Logo from '../../../assets/images/logo.png';
 
 const Navbar = () => {
     const [show, setShow] = useState(false);
@@ -17,7 +20,9 @@ const Navbar = () => {
             <div className="container">
                 <div className="h-24 flex items-center justify-between">
                     {/* logo */}
-                    <Link to='/'>ElectroKidz</Link>
+                    <Link to='/'>
+                        <img className="w-44" src={Logo} alt="electro kidz" />
+                    </Link>
 
 
                     {/* bars icons */}

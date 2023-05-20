@@ -3,12 +3,15 @@ import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ActiveLink from "../../ActiveLink";
 import MobileNav from "./MobileNav";
+import { AuthContext } from "../../../providers/AuthProvider";
+import UserProfile from "./UserProfile";
 
 // react icons
 import { AiOutlineShoppingCart, AiOutlineHeart } from 'react-icons/ai';
 import { HiBars3BottomRight } from 'react-icons/hi2';
-import { AuthContext } from "../../../providers/AuthProvider";
-import UserProfile from "./UserProfile";
+
+// logo
+import Logo from '../../../assets/images/logo.png';
 
 const HiddenNav = () => {
     const { user } = useContext(AuthContext);
@@ -31,7 +34,9 @@ const HiddenNav = () => {
             <div className="container">
                 <div className="h-20 flex items-center justify-between">
                     {/* logo */}
-                    <Link to='/'>ElectroKidz</Link>
+                    <Link to='/'>
+                        <img className="w-44" src={Logo} alt="electro kidz" />
+                    </Link>
 
 
                     {/* bars icons */}

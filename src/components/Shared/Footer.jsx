@@ -7,6 +7,9 @@ import Payment from '../../assets/images/payment.webp';
 // react icons
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaBehance } from "react-icons/fa";
 
+// logo
+import Logo from '../../assets/images/logo-w.png';
+
 const Footer = () => {
     return (
         <section className='bg-[#272727]'>
@@ -17,8 +20,7 @@ const Footer = () => {
                         <div className='md:max-w-xs'>
                             {/* Logo */}
                             <Link to="/" className="flex-shrink-0">
-                                {/* <img src={Logo} alt="Electro-Kidz" /> */}
-                                Electro-Kidz
+                                <img className='w-48' src={Logo} alt="Electro-Kidz" />
                             </Link>
                             <p className='text-[#7B7B7B] text-[15px] mt-8 mb-12'>ElectroKidz is a vibrant and innovative brand that brings a world of electronic toys to life.</p>
 
