@@ -8,14 +8,14 @@ const MyToys = () => {
     const [toys, setToys] = useState([]);
     const { user } = useContext(AuthContext);
     useEffect(() => {
-        fetch(`http://localhost:5000/my-toys?email=${user.email}`)
+        fetch(`https://electro-kidz-server.vercel.app/my-toys?email=${user.email}`)
             .then(res => res.json())
             .then(data => setToys(data))
     }, [])
 
     // delete toy
     const handleDelete = (id) => {
-        const url = `http://localhost:5000/my-toys/${id}`;
+        const url = `https://electro-kidz-server.vercel.app/my-toys/${id}`;
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -51,14 +51,18 @@ const MyToys = () => {
 
     if (toys.length === 0) {
         content = <Loader />
-        return
     }
-    if (toys.length) {
-        content = toys.map(toy => <MyToyCard
-            key={toy._id}
-            toy={toy}
-            handleDelete={handleDelete}
-        />)
+
+    else if (toys.length > 0) {
+        content = <div className='grid grid-cols-1 gap-6 mt-12'>
+            {
+                toys.map(toy => <MyToyCard
+                    key={toy._id}
+                    toy={toy}
+                    handleDelete={handleDelete}
+                />)
+            }
+        </div>
     }
 
     return (
@@ -70,9 +74,8 @@ const MyToys = () => {
                     <h1 className='text-3xl md:text-4xl font-bold text-navy drop-shadow-md'>My Toys</h1>
                 </div>
 
-                <div className='grid grid-cols-1 gap-6 mt-12'>
-                    {content}
-                </div>
+                {/* my toys card */}
+                {content}
             </div>
         </section>
     );

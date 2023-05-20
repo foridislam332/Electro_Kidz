@@ -6,6 +6,7 @@ import Header from "../components/Shared/Header/Header";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import Loader from "../components/Loader";
+import ScrollToTop from "../components/ScrollToTop";
 
 const Main = () => {
     const navigation = useNavigation();
@@ -14,13 +15,13 @@ const Main = () => {
 
     if (navigation.state === "loading") {
         content = <Loader />
-    }
-
-    else if (navigation.state !== "loading") {
+    } else {
         content = <Outlet />
     }
+
     return (
         <>
+            <ScrollToTop />
             <Header />
             <main>
                 {content}

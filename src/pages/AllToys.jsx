@@ -7,7 +7,7 @@ const AllToys = () => {
     const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(() => {
-        fetch(`http://localhost:5000/all-toys?search=${searchTerm}`)
+        fetch(`https://electro-kidz-server.vercel.app/all-toys?search=${searchTerm}`)
             .then(res => res.json())
             .then(data => setToys(data))
     }, [searchTerm])
@@ -16,10 +16,13 @@ const AllToys = () => {
 
     if (toys.length === 0) {
         content = <Loader />
-        return
     }
-    if (toys.length) {
-        content = toys.map(toy => <ToyCard key={toy._id} toy={toy} />)
+    else if (toys.length > 0) {
+        content = <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
+            {
+                toys.map(toy => <ToyCard key={toy._id} toy={toy} />)
+            }
+        </div>
     }
 
     return (
@@ -49,9 +52,7 @@ const AllToys = () => {
                 </div>
 
                 {/* toy card */}
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
-                    {content}
-                </div>
+                {content}
             </div>
         </section>
     );

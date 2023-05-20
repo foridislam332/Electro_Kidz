@@ -11,7 +11,7 @@ const Category = () => {
     const [category, setCategory] = useState('Handheld Games');
 
     useEffect(() => {
-        fetch('http://localhost:5000/all-toys')
+        fetch('https://electro-kidz-server.vercel.app/all-toys')
             .then(res => res.json())
             .then(data => {
                 if (data.length) {
@@ -25,13 +25,16 @@ const Category = () => {
 
     if (toys.length === 0) {
         content = <Loader />
-        return
     }
-    if (toys.length) {
-        content = toys.map(product => <CategoryCard
-            key={product._id}
-            product={product}
-        />)
+    else if (toys.length > 0) {
+        content = <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12'>
+            {
+                toys.map(product => <CategoryCard
+                    key={product._id}
+                    product={product}
+                />)
+            }
+        </div>
     }
 
     return (
@@ -51,19 +54,13 @@ const Category = () => {
                     </TabList>
 
                     <TabPanel>
-                        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12'>
-                            {content}
-                        </div>
+                        {content}
                     </TabPanel>
                     <TabPanel>
-                        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 jus'>
-                            {content}
-                        </div>
+                        {content}
                     </TabPanel>
                     <TabPanel>
-                        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12'>
-                            {content}
-                        </div>
+                        {content}
                     </TabPanel>
                 </Tabs>
             </div>

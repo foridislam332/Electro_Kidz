@@ -35,12 +35,12 @@ const routes = createBrowserRouter([
             {
                 path: '/edit-toys/:id',
                 element: <PrivateRoute><EditToy /></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/all-toys/${params.id}`)
+                loader: ({ params }) => fetch(`https://electro-kidz-server.vercel.app/all-toys/${params.id}`)
             },
             {
                 path: '/toyDetails/:id',
                 element: <PrivateRoute><ToyDetails /></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/all-toys/${params.id}`)
+                loader: ({ params }) => fetch(`https://electro-kidz-server.vercel.app/all-toys/${params.id}`)
             },
             {
                 path: '/login',

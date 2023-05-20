@@ -55,7 +55,7 @@ const EditToy = () => {
 
         const newToy = { name, img, price, rating, subCategory, quantity, des, seller, email }
 
-        fetch(`http://localhost:5000/my-toys/${_id}`, {
+        fetch(`https://electro-kidz-server.vercel.app/my-toys/${_id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
