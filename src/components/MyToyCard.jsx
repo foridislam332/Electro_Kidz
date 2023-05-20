@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const MyToyCard = ({ toy }) => {
+const MyToyCard = ({ toy, handleDelete }) => {
     const { _id, name, img, price, quantity, seller, subCategory } = toy;
 
     return (
@@ -37,7 +37,7 @@ const MyToyCard = ({ toy }) => {
                         </button>
                     </Link>
 
-                    <button className="btn_primary btn_delete w-full">
+                    <button onClick={() => handleDelete(_id)} className="btn_primary btn_delete w-full">
                         Delete
                     </button>
 
