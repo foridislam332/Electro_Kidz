@@ -35,7 +35,7 @@ const AddToys = () => {
             });
         }
 
-        if (!parseFloat(rating) <= 5) {
+        if (parseFloat(rating) > 5) {
             return toast.warning('Rating is less than or equal to 5', {
                 position: "top-center",
                 autoClose: 3000,

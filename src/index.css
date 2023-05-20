@@ -59,6 +59,10 @@
 
 /* primary button design END */
 
+/* btn_delete */
+.btn_delete {
+  background: #ff8087;
+}
 
 /* react tabs styles */
 .react-tabs__tab {
