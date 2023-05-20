@@ -4,6 +4,7 @@ import MyToyCard from '../components/MyToyCard';
 import Loader from '../components/Loader';
 import Swal from 'sweetalert2';
 import MyToyTableRow from '../components/MyToyTableRow';
+import { Helmet } from 'react-helmet';
 
 const MyToys = () => {
     const [toys, setToys] = useState([]);
@@ -73,34 +74,39 @@ const MyToys = () => {
     //     </div>
 
     return (
-        <section className='py-16'>
-            <div className='container'>
-                {/* section top */}
-                <div className='text-center'>
-                    <p className='text-blue md:text-xl tracking-widest drop-shadow-md'>Manage</p>
-                    <h1 className='text-3xl md:text-4xl font-bold text-navy drop-shadow-md'>My Toys</h1>
-                </div>
+        <>
+            <Helmet>
+                <title>ElectroKidz | My Toys page</title>
+            </Helmet>
+            <section className='py-16'>
+                <div className='container'>
+                    {/* section top */}
+                    <div className='text-center'>
+                        <p className='text-blue md:text-xl tracking-widest drop-shadow-md'>Manage</p>
+                        <h1 className='text-3xl md:text-4xl font-bold text-navy drop-shadow-md'>My Toys</h1>
+                    </div>
 
-                {/* toy table */}
-                <div className='overflow-x-auto mt-12'>
-                    <table className="table w-full border border-blue">
-                        <thead>
-                            <tr className="bg-blue text-white uppercase leading-normal">
-                                <th className="py-3 px-4 text-left">Photo</th>
-                                <th className="py-3 px-4 text-left">Name</th>
-                                <th className="py-3 px-2 text-left">Seller</th>
-                                <th className="py-3 px-2 text-left">Sub-category</th>
-                                <th className="py-3 px-2 text-center">Price</th>
-                                <th className="py-3 px-4 text-center">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody className="text-gray-600 font-medium">
-                            {content}
-                        </tbody>
-                    </table>
+                    {/* toy table */}
+                    <div className='overflow-x-auto mt-12'>
+                        <table className="table w-full border border-blue">
+                            <thead>
+                                <tr className="bg-blue text-white uppercase leading-normal">
+                                    <th className="py-3 px-4 text-left">Photo</th>
+                                    <th className="py-3 px-4 text-left">Name</th>
+                                    <th className="py-3 px-2 text-left">Seller</th>
+                                    <th className="py-3 px-2 text-left">Sub-category</th>
+                                    <th className="py-3 px-2 text-center">Price</th>
+                                    <th className="py-3 px-4 text-center">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody className="text-gray-600 font-medium">
+                                {content}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </>
     );
 };
 

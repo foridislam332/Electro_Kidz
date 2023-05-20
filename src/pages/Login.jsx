@@ -1,11 +1,13 @@
 import React, { useContext } from 'react';
+import { Helmet } from 'react-helmet';
+
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../providers/AuthProvider';
+import { toast } from 'react-toastify';
 
 // image
 import LoginImg from '../assets/images/login.jpg';
 import GoogleImg from '../assets/images/google.png';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../providers/AuthProvider';
-import { toast } from 'react-toastify';
 
 const Login = () => {
     const { signIn, googleSignIn } = useContext(AuthContext);
@@ -57,8 +59,12 @@ const Login = () => {
                 });
             })
     }
+
     return (
         <section className='py-16 lg:py-[120px]'>
+            <Helmet>
+                <title>ElectroKidz | Login page</title>
+            </Helmet>
             <div className='container'>
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 place-items-center'>
                     <div className='hidden md:block'>
