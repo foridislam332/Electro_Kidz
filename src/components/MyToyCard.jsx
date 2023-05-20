@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const MyToyCard = ({ toy }) => {
-    const { _id, name, img, price, rating, quantity, seller, subCategory } = toy;
+    const { _id, name, img, price, quantity, seller, subCategory } = toy;
 
     return (
         <div className='w-80 md:w-full mx-auto md:flex items-center border border-blue hover:rounded-lg hover:shadow-lightBlue p-4 transition-all duration-300 ease-in-out'>
@@ -31,7 +31,7 @@ const MyToyCard = ({ toy }) => {
                 </div>
 
                 <div className='flex md:flex-col gap-2 md:gap-3 w-full md:w-36 md:px-1 mt-4 md:mt-0'>
-                    <Link to={`/toyDetails/${_id}`}>
+                    <Link to={`/edit-toys/${_id}`}>
                         <button className="btn_primary w-full">
                             Edit
                         </button>

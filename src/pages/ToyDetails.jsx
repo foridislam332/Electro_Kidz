@@ -59,10 +59,10 @@ const ToyDetails = () => {
                         {/* toy price */}
                         <div className='mb-6 flex items-center gap-4'>
                             <p className='text-2xl font-medium text-gray-text line-through'>
-                                ${price.toFixed(2)}
+                                ${parseInt(price).toFixed(2)}
                             </p>
                             <p className='text-3xl font-bold text-navy'>
-                                ${discountedPrice.toFixed(2)}
+                                ${discountedPrice?.toFixed(2)}
                             </p>
                             <button className='bg-pink py-1 px-3 text-white'>
                                 SAVE {quantity}%
@@ -90,7 +90,7 @@ const ToyDetails = () => {
                         <div>
                             <p className='text-navy font-bold'>Available Quantity:
                                 <span className='text-gray-text ml-1'>
-                                    {quantity.toString().padStart(2, '0')}
+                                    {quantity?.toString().padStart(2, '0')}
                                 </span>
                             </p>
 
