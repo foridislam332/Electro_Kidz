@@ -10,6 +10,7 @@ import PrivateRoute from "./PrivateRoute";
 import MyToys from "../pages/MyToys";
 import AddToys from "../pages/AddToys";
 import EditToy from "../pages/EditToy";
+import PageNotFound from "../pages/PageNotFound";
 
 const routes = createBrowserRouter([
     {
@@ -58,7 +59,7 @@ const routes = createBrowserRouter([
     },
     {
         path: '*',
-        element: <h1>404 page not found</h1>
+        element: <PageNotFound />
     }
 ])
 
