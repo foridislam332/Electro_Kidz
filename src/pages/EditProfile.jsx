@@ -30,10 +30,10 @@ const EditProfile = () => {
             <Helmet>
                 <title>ElectroKidz | Edit Profile page</title>
             </Helmet>
-            <section className='py-16 lg:py-[120px]'>
+            <section className='py-16'>
                 <div className='container'>
-                    <div className='w-[450px] mx-auto rounded-lg shadow-custom p-6'>
-                        <h1 className='text-center text-3xl font-bold mb-10'>Edit your profile</h1>
+                    <div data-aos="fade-up" className='w-[450px] mx-auto rounded-lg shadow-custom p-6'>
+                        <h1 className='text-center text-3xl font-bold mb-10 text-navy drop-shadow-lg'>Edit your profile</h1>
 
                         <form onSubmit={handleSubmit}>
                             {/* Email field */}

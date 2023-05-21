@@ -37,7 +37,7 @@ const HeroSlider = () => {
                 >
                     <div className="container flex flex-col-reverse md:flex-row place-items-center py-16 text-center md:text-left gap-10 md:gap-0">
                         {/* slide content */}
-                        <div className='relative z-50 text-white'>
+                        <div data-aos="zoom-in" className='relative z-50 text-white'>
                             <h1 className='text-4xl lg:text-6xl font-bold lg:leading-[80px]'>Best Kids Store for Electronic Toys</h1>
 
                             <p className="mt-5 mb-14 md:max-w-md text-sm md:text-base">Discover a world of interactive electronic toys at our e-commerce store, where imagination and technology unite for endless fun and entertainment</p>
@@ -49,7 +49,7 @@ const HeroSlider = () => {
                             </Link>
 
                         </div>
-                        <img className="md:h-96 h-[450px]" src={Slide1} alt="toys" />
+                        <img data-aos="fade-up" className="md:h-96 h-[450px]" src={Slide1} alt="toys" />
                     </div>
                 </div>
             </SwiperSlide>
@@ -59,7 +59,7 @@ const HeroSlider = () => {
                 >
                     <div className="container flex flex-col-reverse md:flex-row place-items-center justify-between py-16 text-center md:text-left gap-10 md:gap-0">
                         {/* slide content */}
-                        <div className='relative z-50 text-white'>
+                        <div data-aos="zoom-in" className='relative z-50 text-white'>
                             <h1 className='text-4xl lg:text-6xl font-bold lg:leading-[80px]'>Embrace the Future with best Robot Toys!</h1>
 
                             <p className="mt-5 mb-14 md:max-w-md text-sm md:text-base">From interactive companions to programmable robots, discover a world of robotic fun and learning.</p>
@@ -71,7 +71,7 @@ const HeroSlider = () => {
                             </Link>
 
                         </div>
-                        <img className="md:h-96 h-[450px]" src={Slide2} alt="toys-robot" />
+                        <img data-aos="fade-up" className="md:h-96 h-[450px]" src={Slide2} alt="toys-robot" />
                     </div>
                 </div>
             </SwiperSlide>
@@ -81,7 +81,7 @@ const HeroSlider = () => {
                 >
                     <div className="container flex flex-col-reverse md:flex-row place-items-center py-16 text-center md:text-left gap-10 md:gap-0">
                         {/* slide content */}
-                        <div className='relative z-50 text-white'>
+                        <div data-aos="zoom-in" className='relative z-50 text-white'>
                             <h1 className='text-4xl lg:text-6xl font-bold lg:leading-[80px]'>Unlock Adventure with Toys Video Games!</h1>
 
                             <p className="mt-5 mb-14 md:max-w-md text-sm md:text-base">Discover a world of virtual adventure and interactive playtime with our toys video games collection, where fun and learning go hand-in-hand</p>
@@ -93,7 +93,7 @@ const HeroSlider = () => {
                             </Link>
 
                         </div>
-                        <img className="md:h-96 h-[450px]" src={Slide3} alt="toys" />
+                        <img data-aos="fade-up" className="md:h-96 h-[450px]" src={Slide3} alt="toys" />
                     </div>
                 </div>
             </SwiperSlide>

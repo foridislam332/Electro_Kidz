@@ -42,7 +42,7 @@ const AllToys = () => {
                     </div>
 
                     {/* filter toys */}
-                    <div className='flex items-center justify-center mt-12 mb-8'>
+                    <div data-aos="flip-left" className='flex items-center justify-center mt-12 mb-8'>
                         {/* search area */}
                         <input
                             className='md:w-96 px-3 py-2 border border-pink focus:border-blue outline-none rounded-tl-3xl rounded-bl-3xl'
@@ -59,7 +59,7 @@ const AllToys = () => {
                     </div>
 
                     {/* toy table */}
-                    <div className='overflow-x-auto'>
+                    <div data-aos="fade-up" className='overflow-x-auto'>
                         <table className="table w-full border border-blue">
                             <thead>
                                 <tr className="bg-blue text-white uppercase leading-normal">

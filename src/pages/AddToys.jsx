@@ -79,10 +79,10 @@ const AddToys = () => {
             <Helmet>
                 <title>ElectroKidz | Add Toy page</title>
             </Helmet>
-            <section className='py-16 lg:py-[120px]'>
+            <section className='py-16'>
                 <div className='container'>
-                    <div className='lg:w-4/5 mx-auto rounded-lg shadow-custom p-6'>
-                        <h1 className='text-center text-3xl font-bold mb-10'>Add Toys</h1>
+                    <div data-aos="fade-up" className='lg:w-4/5 mx-auto rounded-lg shadow-custom p-6'>
+                        <h1 className='text-center text-3xl font-bold mb-10 text-navy drop-shadow-lg'>Add Toys</h1>
 
                         <form onSubmit={handleSubmit}>
                             {/* 1st col */}

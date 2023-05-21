@@ -104,7 +104,7 @@ const MyToys = () => {
                     </div>
 
                     {/* data shorting by price */}
-                    <div className='mt-8 py-4 ml-auto text-right'>
+                    <div data-aos="flip-left" className='mt-8 py-4 ml-auto text-right'>
                         <form onSubmit={handleSortPrice}>
                             <label className='font-semibold text-navy drop-shadow-md' for="sortPrice">Short by Price: </label>
                             <select className='w-40 border p-2 rounded focus:border-blue outline-none shadow-lightBlue' id="sortPrice" name="sort">
@@ -120,7 +120,7 @@ const MyToys = () => {
                     </div>
 
                     {/* toy table */}
-                    <div className='overflow-x-auto'>
+                    <div data-aos="fade-up" className='overflow-x-auto'>
                         <table className="table w-full border border-blue">
                             <thead>
                                 <tr className="bg-blue text-white uppercase leading-normal">

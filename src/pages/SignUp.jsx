@@ -75,13 +75,14 @@ const SignUp = () => {
             <Helmet>
                 <title>ElectroKidz | Toy Details page</title>
             </Helmet>
-            <section className='py-16 lg:py-[120px]'>
+            <section className='py-16'>
                 <div className='container'>
                     <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 place-items-center'>
-                        <div className='hidden md:block'>
+                        <div data-aos="zoom-out-right" className='hidden md:block'>
                             <img className='md:w-[450px] lg:w-auto' src={SignUpImg} alt="login" />
                         </div>
-                        <div className='w-full'>
+
+                        <div data-aos="zoom-in" className='w-full'>
                             <div className='w-[450px] mx-auto lg:mx-0 lg:ml-auto rounded-lg shadow-custom p-6'>
                                 <h1 className='text-center text-3xl font-bold mb-10'>Sign Up</h1>
 

@@ -27,7 +27,7 @@ const Category = () => {
         content = <Loader />
     }
     else if (toys.length > 0) {
-        content = <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12'>
+        content = <div data-aos="zoom-out" className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12'>
             {
                 toys.map(product => <CategoryCard
                     key={product._id}
