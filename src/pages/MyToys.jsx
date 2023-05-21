@@ -21,8 +21,6 @@ const MyToys = () => {
             url = `http://localhost:5000/my-toys?email=${user.email}&sort=high`;
         }
 
-        console.log(url)
-
         fetch(url)
             .then(res => res.json())
             .then(data => setToys(data))

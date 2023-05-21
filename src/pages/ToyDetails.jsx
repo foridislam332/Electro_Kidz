@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 // Rating star
 import { Rating, Star } from '@smastrom/react-rating'
@@ -7,6 +7,8 @@ import '@smastrom/react-rating/style.css'
 
 // react icons
 import { FaFacebookF, FaTwitter, FaPinterest, FaGoogle } from "react-icons/fa";
+import { TfiAngleRight } from "react-icons/tfi";
+
 import { Helmet } from 'react-helmet';
 
 const ToyDetails = () => {
@@ -50,7 +52,10 @@ const ToyDetails = () => {
 
                         <div className='md:pl-8'>
                             {/* seller name */}
-                            <p className='text-gray-text text-sm'>{seller}</p>
+                            <p className='text-gray-text text-sm flex items-center gap-2'>
+                                <Link to='/all-toys' className='text-blue' >Electronic Toy</Link>
+                                <TfiAngleRight size={12} /> {subCategory}
+                            </p>
 
                             {/* toy name */}
                             <h2 className='text-2xl font-semibold text-navy'>{name}</h2>
@@ -103,9 +108,15 @@ const ToyDetails = () => {
                                     </span>
                                 </p>
 
-                                <p className='text-navy font-bold'>Categories:
-                                    <span className='text-gray-text ml-1'>
-                                        {subCategory}
+                                <p className='text-navy font-bold mt-4'>Seller:
+                                    <span className='text-gray-text ml-1 font-medium'>
+                                        {seller}
+                                    </span>
+                                </p>
+
+                                <p className='text-navy font-bold'>Email:
+                                    <span className='text-gray-text ml-1 font-medium'>
+                                        example@electro.com
                                     </span>
                                 </p>
                             </div>
