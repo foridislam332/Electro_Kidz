@@ -7,10 +7,9 @@ import { AuthContext } from '../../../providers/AuthProvider';
 const UserProfile = ({ user }) => {
     const { logOut } = useContext(AuthContext);
     return (
-        <div className="ml-4 relative z-50 profile hidden md:block group">
-            <Link
-                to="/profile"
-                className="flex items-center py-3"
+        <div className="ml-4 relative z-[999] profile hidden md:block group">
+            <div
+                className="flex items-center py-3 cursor-pointer"
             >
                 {
                     user?.photoURL ? <img
@@ -24,7 +23,7 @@ const UserProfile = ({ user }) => {
                             {user?.displayName?.slice(0, 1)}
                         </p>
                 }
-            </Link>
+            </div>
 
             {/* Dropdown */}
             <div
