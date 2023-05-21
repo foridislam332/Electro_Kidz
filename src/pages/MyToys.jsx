@@ -8,12 +8,31 @@ import { Helmet } from 'react-helmet';
 
 const MyToys = () => {
     const [toys, setToys] = useState([]);
+    const [sortBy, setSortBy] = useState(null);
+
     const { user } = useContext(AuthContext);
+
     useEffect(() => {
-        fetch(`https://electro-kidz-server.vercel.app/my-toys?email=${user.email}`)
+        let url = `http://localhost:5000/my-toys?email=${user.email}`;
+
+        if (sortBy === 'low') {
+            url = `http://localhost:5000/my-toys?email=${user.email}&sort=low`;
+        } else if (sortBy === 'high') {
+            url = `http://localhost:5000/my-toys?email=${user.email}&sort=high`;
+        }
+
+        console.log(url)
+
+        fetch(url)
             .then(res => res.json())
             .then(data => setToys(data))
-    }, [])
+    }, [sortBy])
+
+    const handleSortPrice = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        setSortBy(form.sort.value);
+    };
 
     // delete toy
     const handleDelete = (id) => {
@@ -86,8 +105,24 @@ const MyToys = () => {
                         <h1 className='text-3xl md:text-4xl font-bold text-navy drop-shadow-md'>My Toys</h1>
                     </div>
 
+                    {/* data shorting by price */}
+                    <div className='mt-8 py-4 ml-auto text-right'>
+                        <form onSubmit={handleSortPrice}>
+                            <label className='font-semibold text-navy drop-shadow-md' for="sortPrice">Short by Price: </label>
+                            <select className='w-40 border p-2 rounded focus:border-blue outline-none shadow-lightBlue' id="sortPrice" name="sort">
+                                <option value={null}>Select</option>
+                                <option value="low">Low Price</option>
+                                <option value="high">High Price</option>
+                            </select>
+
+                            <button className='ml-4 btn_primary' type="submit">
+                                Apply
+                            </button>
+                        </form>
+                    </div>
+
                     {/* toy table */}
-                    <div className='overflow-x-auto mt-12'>
+                    <div className='overflow-x-auto'>
                         <table className="table w-full border border-blue">
                             <thead>
                                 <tr className="bg-blue text-white uppercase leading-normal">

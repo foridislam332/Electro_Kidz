@@ -8,9 +8,9 @@ const MyToyTableRow = ({ toy, handleDelete }) => {
     return (
         <tr className="border-b border-blue even:bg-navy even:text-white">
             <td className="py-3 px-4 text-left text-blue">
-                <div className='w-16 h-16 rounded-full border border-blue shadow-lg'>
+                <p className='w-16 h-16 rounded-full border border-blue shadow-lg'>
                     <img className='h-full rounded-full' src={img} alt={name} />
-                </div>
+                </p>
             </td>
             <td className="py-3 px-4 text-left text-blue min-w-[200px]">
                 <Link to={`/toyDetails/${_id}`}>
