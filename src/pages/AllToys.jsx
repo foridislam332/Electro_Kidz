@@ -22,12 +22,6 @@ const AllToys = () => {
         content = toys.map(toy => <AllToyTableRow key={toy._id} toy={toy} />)
     }
 
-    {/* <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
-    {
-        toys.map(toy => <All key={toy._id} toy={toy} />)
-    }
-</div> */}
-
     return (
         <>
             <Helmet>

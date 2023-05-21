@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet";
 import Category from "../sections/HomeSections/Category";
 import Gallery from "../sections/HomeSections/Gallery";
 import HeroBanner from "../sections/HomeSections/HeroBanner";
+import BestProducts from "../sections/HomeSections/BestProducts";
 
 const Home = () => {
     return (
@@ -10,6 +11,7 @@ const Home = () => {
                 <title>ElectroKidz - Electronic Toys React Template</title>
             </Helmet>
             <HeroBanner />
+            <BestProducts />
             <Gallery />
             <Category />
         </>

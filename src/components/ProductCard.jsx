@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { Rating, Star } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css';
 
-const ToyCard = ({ toy }) => {
+const ProductCard = ({ toy }) => {
     const { _id, name, img, price, rating, quantity, seller, subCategory } = toy;
 
     // rating style
@@ -15,7 +15,7 @@ const ToyCard = ({ toy }) => {
         inactiveFillColor: '#ff80864c'
     }
     return (
-        <div className='w-80 lg:w-full mx-auto border border-blue hover:rounded-lg hover:shadow-lightBlue p-4 transition-all duration-300 ease-in-out'>
+        <div data-aos="fade-up" className='w-80 lg:w-full mx-auto border border-blue hover:rounded-lg hover:shadow-lightBlue p-4 transition-all duration-300 ease-in-out'>
             {/* toy image */}
             <Link to={`/toyDetails/${_id}`}>
                 <div className='h-48'>
@@ -51,4 +51,4 @@ const ToyCard = ({ toy }) => {
     );
 };
 
-export default ToyCard;
+export default ProductCard;

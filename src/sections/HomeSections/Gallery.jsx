@@ -45,7 +45,7 @@ const Gallery = () => {
         }
     ];
     return (
-        <section className='py-16 md:py-[120px]'>
+        <section className='pb-16 md:pb-20'>
             <div className="container">
                 {/* gallery section top */}
                 <div className='text-center'>
