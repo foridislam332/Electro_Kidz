@@ -16,7 +16,7 @@ const Navbar = () => {
     const [show, setShow] = useState(false);
     const { user } = useContext(AuthContext);
     return (
-        <nav className='shadow-lg w-full z-50 transition-all duration-300 ease-in-out bg-white'>
+        <nav data-aos="fade-down" className='shadow-lg w-full z-50 transition-all duration-300 ease-in-out bg-white'>
             <div className="container">
                 <div className="h-24 flex items-center justify-between">
                     {/* logo */}

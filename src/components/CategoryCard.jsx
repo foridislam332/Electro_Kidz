@@ -14,7 +14,7 @@ const CategoryCard = ({ product }) => {
         inactiveFillColor: '#ff80864c'
     }
     return (
-        <div className="max-w-sm rounded-lg border border-pink p-6 overflow-hidden shadow-lg hover:border-blue hover:shadow-lightBlue transition-all duration-300 ease-in-out group">
+        <div className="max-w-sm mx-auto rounded-lg border border-pink p-6 overflow-hidden shadow-lg hover:border-blue hover:shadow-lightBlue transition-all duration-300 ease-in-out group">
             <div className='w-56 m-auto'>
                 <img className="w-full relative group-hover:scale-125 transition-all duration-300 ease-in-out z-10" src={img} alt={name} />
             </div>

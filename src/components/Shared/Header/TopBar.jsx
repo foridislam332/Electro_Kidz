@@ -1,7 +1,7 @@
 
 const TopBar = () => {
     return (
-        <div className="bg-navy text-white py-3">
+        <div data-aos="fade-down" className="bg-navy text-white py-3">
             <div className="container">
                 <div className="flex lg:flex-row flex-col items-center justify-between text-sm font-medium text-center space-y-2 lg:space-y-0">
                     <p>Free Shipping On Orders $50+</p>

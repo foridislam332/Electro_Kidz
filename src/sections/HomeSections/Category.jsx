@@ -47,7 +47,7 @@ const Category = () => {
                 </div>
 
                 <Tabs className="mt-12">
-                    <TabList className="text-navy text-lg text-center space-x-2">
+                    <TabList className="text-navy text-lg text-center space-x-2 space-y-2">
                         <Tab onClick={() => setCategory('Handheld Games')}>Handheld Games</Tab>
                         <Tab onClick={() => setCategory('Educational Computers')}>Educational Computers</Tab>
                         <Tab onClick={() => setCategory('Storytelling Toys')}>Storytelling Toys</Tab>

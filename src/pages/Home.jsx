@@ -3,6 +3,7 @@ import Category from "../sections/HomeSections/Category";
 import Gallery from "../sections/HomeSections/Gallery";
 import HeroBanner from "../sections/HomeSections/HeroBanner";
 import BestProducts from "../sections/HomeSections/BestProducts";
+import Deal from "../sections/HomeSections/Deal";
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
             <BestProducts />
             <Gallery />
             <Category />
+            <Deal />
         </>
     );
 };
