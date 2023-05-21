@@ -14,7 +14,7 @@ import { Helmet } from 'react-helmet';
 const ToyDetails = () => {
     const [count, setCount] = useState(1);
     const toy = useLoaderData();
-    const { name, img, price, rating, quantity, seller, subCategory, des } = toy;
+    const { name, email, img, price, rating, quantity, seller, subCategory, des } = toy;
 
     const myStyles = {
         itemShapes: Star,
@@ -84,7 +84,7 @@ const ToyDetails = () => {
                                 des ? <p className='text-gray-text'>
                                     {des}
                                 </p> : <p className='text-gray-text'>
-                                    Lorem ipsum dolor sit amet, consect adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quisll exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duisol aute irure dolor in reprehenderit.
+                                    The toy's user interface is intuitive and straightforward, allowing my child to navigate through the different activities with ease. The sound effects and music are also pleasant, creating an immersive experience and adding an extra layer of excitement to the gameplay.
                                 </p>
                             }
 
@@ -116,7 +116,9 @@ const ToyDetails = () => {
 
                                 <p className='text-navy font-bold'>Email:
                                     <span className='text-gray-text ml-1 font-medium'>
-                                        example@electro.com
+                                        {
+                                            email ? email : seller.split()[0] + '@gmail.com'
+                                        }
                                     </span>
                                 </p>
                             </div>

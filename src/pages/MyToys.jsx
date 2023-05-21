@@ -13,12 +13,12 @@ const MyToys = () => {
     const { user } = useContext(AuthContext);
 
     useEffect(() => {
-        let url = `http://localhost:5000/my-toys?email=${user.email}`;
+        let url = `https://electro-kidz-server.vercel.app/my-toys?email=${user.email}`;
 
         if (sortBy === 'low') {
-            url = `http://localhost:5000/my-toys?email=${user.email}&sort=low`;
+            url = `https://electro-kidz-server.vercel.app/my-toys?email=${user.email}&sort=low`;
         } else if (sortBy === 'high') {
-            url = `http://localhost:5000/my-toys?email=${user.email}&sort=high`;
+            url = `https://electro-kidz-server.vercel.app/my-toys?email=${user.email}&sort=high`;
         }
 
         fetch(url)
@@ -106,7 +106,7 @@ const MyToys = () => {
                     {/* data shorting by price */}
                     <div data-aos="flip-left" className='mt-8 py-4 ml-auto text-right'>
                         <form onSubmit={handleSortPrice}>
-                            <label className='font-semibold text-navy drop-shadow-md' for="sortPrice">Short by Price: </label>
+                            <label className='font-semibold text-navy drop-shadow-md' htmlFor="sortPrice">Short by Price: </label>
                             <select className='w-40 border p-2 rounded focus:border-blue outline-none shadow-lightBlue' id="sortPrice" name="sort">
                                 <option value={null}>Select</option>
                                 <option value="low">Low Price</option>
