@@ -87,7 +87,7 @@ const Footer = () => {
                     <img className='mx-auto' src={Payment} alt="payment-system" />
                 </div>
                 <div className='border-t border-[#3D3D3D] text-center md:text-left'>
-                    <p className='py-8 text-[#7B7B7B] text-[15px] font-medium'>© 2021 Copyright <Link to='/' className='font-bold text-white'>AzazTheme</Link></p>
+                    <p className='py-8 text-[#7B7B7B] text-[15px] font-medium'>© 2023 Copyright by <Link to='/' className='font-bold text-white'>AzazTheme</Link></p>
                 </div>
             </div>
         </section>
