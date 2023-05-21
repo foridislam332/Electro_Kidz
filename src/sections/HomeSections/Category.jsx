@@ -11,12 +11,11 @@ const Category = () => {
     const [category, setCategory] = useState('Handheld Games');
 
     useEffect(() => {
-        fetch('https://electro-kidz-server.vercel.app/all-toys')
+        fetch(`http://localhost:5000/category?category=${category}`)
             .then(res => res.json())
             .then(data => {
                 if (data.length) {
-                    const filter = data.filter(product => product.subCategory === category);
-                    setToys(filter)
+                    setToys(data)
                 }
             })
     }, [category])
